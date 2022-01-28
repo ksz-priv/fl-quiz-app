@@ -5,9 +5,12 @@ void main() {
 }
 
 class FlDev extends StatelessWidget {
-void answerQuestion(Alignment bottomCenter) {
-  print ('Answer chosen!');
-}
+  var questionIndex = 0;
+  
+  void answerQuestion() {
+    questionIndex = questionIndex + 1;
+    print(questionIndex);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +26,19 @@ void answerQuestion(Alignment bottomCenter) {
         ),
         body: Column(
           children: [
-            Text('The question!'),
-            ElevatedButton(onPressed: answerQuestion, child: Text('Answer 1')),
+            Text(
+              questions[questionIndex],
+            ),
             ElevatedButton(
-              onPressed: null,
+              onPressed: answerQuestion,
+              child: Text('Answer 1'),
+            ),
+            ElevatedButton(
+              onPressed: answerQuestion,
               child: Text('Answer 2'),
             ),
             ElevatedButton(
-              onPressed: null,
+              onPressed: answerQuestion,
               child: Text('Answer 3'),
             ),
           ],
