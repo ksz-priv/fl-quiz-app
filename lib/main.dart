@@ -4,7 +4,16 @@ void main() {
   runApp(FlDev());
 }
 
-class FlDev extends StatelessWidget {
+class FlDev extends StatefulWidget {
+
+@override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return FlDevState();
+  }
+}
+
+class FlDevState extends State<FlDev> {
   var questionIndex = 0;
   
   void answerQuestion() {
@@ -47,3 +56,4 @@ class FlDev extends StatelessWidget {
     );
   }
 }
+
